@@ -1,3 +1,30 @@
+## Your Notes Here
+
+- Add a new toy when the toy form is submitted
+
+  - How I debugged:
+  - Looked in console and saw 500 error, then submitted form again and looked in network response and looked at the preview of the error: 
+    #<NameError: uninitialized constant ToysController::Toys>" and trace: "app/controllers/toys_controller.rb:10:in `create'"}
+  - added byebug to ToysController create action, params looked ok, tried to run the code and got following error: NameError Exception: uninitialized constant ToysController::Toys
+  - realized Toys was added instead of Toy
+  -
+
+
+- Update the number of likes for a toy
+
+  - How I debugged:
+  - looked in console and it gave a syntaxerror and unexpected end of json
+  - added byebug to update action and realized that there was no render json at end of the action
+
+- Donate a toy to Goodwill (and delete it from our database)
+
+  - How I debugged:
+-404 not found error in console
+- in network request preview shows the following:
+   "#<ActionController::RoutingError: No route matches [DELETE] \"/toys/2\">"
+- added :destroy to resource in routes.rb
+
+
 # Putting it All Together: Client-Server Communication
 
 ## Learning Goals
@@ -58,16 +85,3 @@ notes about your debugging process. Being a strong debugger is all about
 developing a process, and it's helpful to document your steps as part of
 developing your own process.
 
-## Your Notes Here
-
-- Add a new toy when the toy form is submitted
-
-  - How I debugged:
-
-- Update the number of likes for a toy
-
-  - How I debugged:
-
-- Donate a toy to Goodwill (and delete it from our database)
-
-  - How I debugged:
